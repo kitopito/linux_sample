@@ -1,19 +1,22 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
 
 int	main(void)
 {
-	char *args[3][3] = {//
+	char *args[4][3] = {//
 						{"ls", "-l", NULL},
 						//
 						{"/bin/ls", "-l", NULL},
 						//
+						{"~/../../bin/ls", "-l", NULL},
+						//
 						{"../../../../bin/ls", "-l", NULL}};
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		pid_t pid = fork();
 
@@ -32,6 +35,8 @@ int	main(void)
 			if (execve(args[i][0], args[i], NULL) == -1)
 			{
 				// execveが失敗した場合
+				write(STDERR_FILENO, args[i][0], strlen(args[i][0]));
+				write(STDERR_FILENO, ": ", 2);
 				perror("execve");
 				exit(1);
 			}
