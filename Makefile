@@ -41,6 +41,11 @@ shell_owata:
 	
 redirect:
 	gcc redirect.c
+	
+exe:
+	gcc execuve_test.c
+	./a.out
+	rm a.out
 
 clean:
 	rm a.out
