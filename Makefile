@@ -52,5 +52,10 @@ nezumi:
 	./a.out
 	rm a.out
 
+nezumi_count:
+	gcc nezumi_zan.c
+	./a.out | uniq -c
+	rm a.out
+
 clean:
 	rm a.out
