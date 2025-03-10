@@ -46,6 +46,11 @@ exe:
 	gcc execuve_test.c
 	./a.out
 	rm a.out
+	
+nezumi:
+	gcc nezumi_zan.c
+	./a.out
+	rm a.out
 
 clean:
 	rm a.out
