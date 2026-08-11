@@ -24,7 +24,8 @@ int	main(void)
 	history_no = 0;
 	history = NULL;
 	//
-	while (line = readline(prompt))
+	line = readline(prompt);
+	while (line != NULL)
 	{
 		lineSize = strlen(line);
 		// for (index = 0; index < lineSize; index++)
@@ -39,9 +40,10 @@ int	main(void)
 			free(history);
 		}
 		free(line);
+		line = readline(prompt);
 	}
 	printf("\n");
-	clear_history();
+	rl_clear_history();
 	line = readline(prompt);
 	printf(" last input = [ %s ]\n", line);
 	free(line);

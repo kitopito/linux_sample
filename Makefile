@@ -57,5 +57,10 @@ nezumi_count:
 	./a.out | uniq -c
 	rm a.out
 
+pipe:
+	gcc pipe_sample.c
+	./a.out
+	rm a.out
+
 clean:
 	rm a.out
