@@ -29,16 +29,20 @@
 // }
 #include <stdio.h>
 
-void	hack(void)
-{
-	printf("Hacked!\n");
-}
+// void	hack(void)
+// {
+// 	printf("Hacked!\n");
+// }
 
 void	func(void)
 {
 	int	*a[1];
 
-	a[2] = hack;
+	// a[2] = hack;
+	// a[3] = (int *)hack;
+	printf("Hello, World!\n");
+	a[2] = (int *)func;
+	a[3] = (int *)func;
 }
 
 int	main(void)
