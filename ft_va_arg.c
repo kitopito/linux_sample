@@ -1,9 +1,5 @@
 // ft_va_list
-typedef struct s_ft_va_list
-{
-	unsigned char	*ptr;
-}					t_ft_va_list;
-
+#include "ft_va.h"
 
 char	*ft_va_str(t_ft_va_list *ap)
 {
